@@ -109,7 +109,7 @@ The system follows a microservices architecture with clear domain boundaries:
 **Intelligence Domain**
 - LLM inference with model routing and caching
 - Services: LLM Inference Service
-- Models: Claude 3.5 Sonnet (primary), GPT-4 (fallback)
+- Models: Claude 3.5 Sonnet (primary), GPT-4 (fallback), else we can look for some other LLM
 
 ## 1.3 Architecture Diagram Description
 
@@ -131,7 +131,7 @@ LLM Inference Service (TGI/vLLM)
 ### Layer 3 - State & Data
 ```
 Memory Keeper Service → 
-PostgreSQL (primary) + Redis (cache) + S3 (documents)
+Mongodb (primary) + Redis (cache) + S3 (documents)
 ```
 
 ### Layer 4 - External Integration
